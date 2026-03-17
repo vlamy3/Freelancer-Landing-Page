@@ -8,11 +8,29 @@
     --transition: 0.3s ease;
 }
 
-/* Force dark mode colors */
 [data-theme="dark"] {
     --bg: #121212;
-    --text: #ffffff; /* Pure white for dark mode */
-    --card-bg: #1e1e1e;
+    --text: #ffffff; /* Brighter white for high contrast */
+    --card-bg: #1e1e1e; /* Slightly lighter than the background so cards "pop" */
+    --accent: #A3B18A;
+}
+
+/* Add this to ensure everything updates when the theme changes */
+[data-theme="dark"] .service-card, 
+[data-theme="dark"] .pricing-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+[data-theme="dark"] p, 
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3 {
+    color: #ffffff !important; /* Force white text in dark mode */
+}
+
+[data-theme="dark"] .logo-text {
+    color: #ffffff;
 }
 
 /* Global Reset */
